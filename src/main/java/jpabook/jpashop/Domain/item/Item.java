@@ -1,16 +1,11 @@
-package jpabook.jpashop;
-
-import lombok.Getter;
-import lombok.Setter;
+package jpabook.jpashop.Domain.item;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Getter @Setter
-public class Member {
+public class Item {
     @Id @GeneratedValue
     private Long id;
-    private String username;
 }
