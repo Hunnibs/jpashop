@@ -1,5 +1,8 @@
 package jpabook.jpashop.Domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -7,8 +10,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@Getter @Setter
 public class Order {
-    @Id@GeneratedValue
+    @Id @GeneratedValue
     @Column(name = "order_id")
     private Long id;
 
@@ -17,7 +21,7 @@ public class Order {
     private Member member;
 
     @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderitems= new ArrayList<>();
+    private List<OrderItem> orderItems= new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "delivery_id")
